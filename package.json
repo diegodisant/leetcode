@@ -3,7 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "format:check": "oxfmt \"src/**/*.ts\" \"*.ts\" --check",
+    "format:fix": "oxfmt \"src/**/*.ts\" \"*.ts\"",
+    "lint:check": "oxlint \"src/**/*.ts\" \"*.ts\"",
+    "lint:fix": "oxlint \"src/**/*.ts\" \"*.ts\" --fix",
+    "test": "NODE_ENV=test jest",
+    "test:cov": "NODE_ENV=test jest --coverage"
   },
   "keywords": [],
   "author": "",
@@ -15,5 +20,15 @@
       "onFail": "download"
     }
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@typescript/native-preview": "7.0.0-dev.20260707.2",
+    "jest": "^30.4.2",
+    "oxfmt": "^0.64.0",
+    "oxlint": "^1.79.0",
+    "oxlint-tsgolint": "^7.0.2001",
+    "ts-jest": "^29.4.12",
+    "typescript": "^6.0.3"
+  }
 }
