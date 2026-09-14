@@ -22,6 +22,8 @@
   },
   "type": "module",
   "devDependencies": {
+    "@swc/core": "^1.16.2",
+    "@swc/jest": "^0.2.39",
     "@types/jest": "^30.0.0",
     "@typescript/native-preview": "7.0.0-dev.20260707.2",
     "jest": "^30.4.2",

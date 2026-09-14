@@ -1,5 +1,5 @@
-import { type DataProvider } from '@/common/types/DataProvider.ts';
-import { twoSum } from '@/easy/twosum.ts';
+import { type DataProvider } from '@/common/types/DataProvider';
+import { twoSum } from '@/easy/twosum';
 
 type TestData = {
   nums: number[];
