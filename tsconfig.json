@@ -17,12 +17,12 @@
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false,
-    "allowImportingTsExtensions": true,
     "types": ["node", "jest"],
     "ignoreDeprecations": "6.0",
     "isolatedModules": true,
     "paths": {
       "@/*": ["./src/*"]
     }
-  }
+  },
+  "exclude": ["node_modules", "coverage"]
 }

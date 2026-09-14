@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "format:check": "oxfmt \"src/**/*.ts\" \"*.ts\" --check",
-    "format:fix": "oxfmt \"src/**/*.ts\" \"*.ts\"",
-    "lint:check": "oxlint \"src/**/*.ts\" \"*.ts\"",
-    "lint:fix": "oxlint \"src/**/*.ts\" \"*.ts\" --fix",
+    "format:check": "RUST_LOG=debug oxfmt 'src/**/*.ts' --check",
+    "format:fix": "RUST_LOG=debug oxfmt 'src/**/*.ts'",
+    "lint:check": "RUST_LOG=debug oxlint src --no-ignore",
+    "lint:fix": "RUST_LOG=debug oxlint src --no-ignore --fix",
     "test": "NODE_ENV=test jest",
     "test:cov": "NODE_ENV=test jest --coverage"
   },
