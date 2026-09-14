@@ -30,7 +30,6 @@
     "oxfmt": "^0.64.0",
     "oxlint": "^1.79.0",
     "oxlint-tsgolint": "^7.0.2001",
-    "ts-jest": "^29.4.12",
     "typescript": "^6.0.3"
   },
   "packageManager": "pnpm@11.21.0"
