@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "module": "nodenext",
-    "moduleResolution": "nodenext",
+    "moduleResolution": "bundler",
     "resolvePackageJsonExports": true,
     "esModuleInterop": true,
     "declaration": true,
@@ -9,8 +9,8 @@
     "allowSyntheticDefaultImports": true,
     "target": "esnext",
     "sourceMap": false,
+    "baseUrl": ".",
     "rootDir": "./src",
-    "baseUrl": "./",
     "incremental": true,
     "skipLibCheck": true,
     "strictNullChecks": true,
@@ -25,5 +25,6 @@
       "@/*": ["./src/*"]
     }
   },
+  "include": ["./src/**/*"],
   "exclude": ["node_modules", "coverage"]
 }
