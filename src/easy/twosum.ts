@@ -5,18 +5,18 @@ export const twoSum = (nums: number[], target: number): number[] => {
   let searchedIndexes: number[] | undefined = [];
   const foundIndexes: number[] = [];
 
-  const numsMap = buildMap(nums, target);
+  const numsMap = buildMap(nums);
 
   for (const [currentNumber, indexes] of numsMap) {
-    if (currentNumber > target) {
-      continue;
-    }
-
     if (isExactMultiplier(target, currentNumber, indexes)) {
       return indexes;
     }
 
     searchNumber = target - currentNumber;
+
+    if (searchNumber === currentNumber) {
+      continue
+    }
 
     searchedIndexes = numsMap.get(searchNumber);
 
@@ -34,23 +34,26 @@ export const twoSum = (nums: number[], target: number): number[] => {
 };
 
 const isExactMultiplier = (target: number, currentNumber: number, indexes: number[]): boolean => {
-  return (
-    target >= currentNumber &&
-    target % currentNumber == 0 &&
-    Math.trunc(target / currentNumber) === indexes.length
-  );
+  if (indexes.length < 2) {
+    return false;
+  }
+
+  const multipliers = indexes.length
+  const multipliedNumber = currentNumber * multipliers
+
+  if (multipliedNumber === target) {
+    return true
+  }
+
+  return false
 };
 
-const buildMap = (nums: number[], target: number): ValueIndexesMap => {
+const buildMap = (nums: number[]): ValueIndexesMap => {
   let currentNumber: number = 0;
   const valueIndexMap: ValueIndexesMap = new Map<number, number[]>();
 
   for (let numIndex = 0; numIndex < nums.length; numIndex += 1) {
     currentNumber = nums[numIndex];
-
-    if (currentNumber > target) {
-      continue;
-    }
 
     const indexes = valueIndexMap.get(currentNumber);
 
