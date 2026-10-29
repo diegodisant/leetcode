@@ -1,5 +1,5 @@
-import { type DataProvider } from '@/common/types/DataProvider';
-import { twoSum } from '@/easy/twosum';
+import { twoSum } from "@/easy/twosum";
+import { type DataProvider } from "@/common/types/DataProvider";
 
 type TestData = {
   nums: number[];
@@ -7,9 +7,9 @@ type TestData = {
   expected: number[];
 };
 
-type TwoSumDataProviderType = DataProvider<TestData>;
+type TwoSumDataProvider = DataProvider<TestData>;
 
-const dataProvider: TwoSumDataProviderType = [
+const dataProvider: TwoSumDataProvider = [
   {
     nums: [2, 7, 11, 15],
     target: 9,

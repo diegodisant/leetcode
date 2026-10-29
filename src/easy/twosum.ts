@@ -1,13 +1,13 @@
-type ValueIndexesMap = Map<number, number[]>
+type ValueIndexesMap = Map<number, number[]>;
 
 export const twoSum = (nums: number[], target: number): number[] => {
   let firstIndex = 0;
   let searchNumber = 0;
   let currentNumber = 0;
-  let searchIndexes: number[] | undefined = []
+  let searchIndexes: number[] | undefined = [];
 
   const numsSize = nums.length;
-  const indexesMap: ValueIndexesMap = new Map<number, number[]>();
+  const map: ValueIndexesMap = new Map<number, number[]>();
 
   for (
     let numIndex = 0;
@@ -16,13 +16,13 @@ export const twoSum = (nums: number[], target: number): number[] => {
   ) {
     currentNumber = nums[numIndex];
 
-    if (!indexesMap.has(currentNumber)) {
-      indexesMap.set(currentNumber, [numIndex]);
+    if (!map.has(currentNumber)) {
+      map.set(currentNumber, [numIndex]);
     }
 
     searchNumber = target - currentNumber;
 
-    searchIndexes = indexesMap.get(searchNumber);
+    searchIndexes = map.get(searchNumber);
 
     if (searchIndexes === undefined) {
       continue;
